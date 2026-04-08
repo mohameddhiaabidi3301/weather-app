@@ -1,3 +1,4 @@
+//Weather API : handles city names, zip codes, landmarks, GPS Coordinates.
 import axios from 'axios';
 import { NextResponse } from 'next/server';
 
