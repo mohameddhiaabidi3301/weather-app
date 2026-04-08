@@ -1,3 +1,4 @@
+// This is the CRUD table — inline editing, error display, delete confirmation, all handled here.
 'use client';
 import React, { useEffect, useState } from 'react';
 
