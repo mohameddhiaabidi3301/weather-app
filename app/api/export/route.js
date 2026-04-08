@@ -1,3 +1,4 @@
+// This single route handles all 5 export formats — JSON, CSV, XML, Markdown, and PDF.
 import connectDB from '@/lib/mongodb';
 import Weather from '@/models/Weather';
 import { NextResponse } from 'next/server';
