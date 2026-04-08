@@ -1,3 +1,4 @@
+// Handles Updating and Deleting individual records.
 import connectDB from '@/lib/mongodb';
 import Weather from '@/models/Weather';
 import { NextResponse } from 'next/server';
