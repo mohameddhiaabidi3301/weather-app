@@ -24,3 +24,15 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+.leaflet-container {
+  z-index: 0 !important;
+  cursor: grab !important;
+}
+
+.leaflet-grab {
+  cursor: grab !important;
+}
+
+.leaflet-dragging .leaflet-grab {
+  cursor: grabbing !important;
+}
