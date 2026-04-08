@@ -1,3 +1,4 @@
+// The Mongoose schema — stores location, date range, temperature, humidity, wind speed, forecast, and icons.
 import mongoose from 'mongoose';
 
 const WeatherSchema = new mongoose.Schema({
