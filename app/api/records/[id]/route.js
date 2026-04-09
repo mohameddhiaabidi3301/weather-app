@@ -1,4 +1,3 @@
-// Handles Updating and Deleting individual records.
 import connectDB from '@/lib/mongodb';
 import Weather from '@/models/Weather';
 import { NextResponse } from 'next/server';
@@ -19,6 +18,7 @@ async function validateLocation(location) {
 export async function PUT(request, { params }) {
   try {
     await connectDB();
+    const { id } = await params;
     const body = await request.json();
     const { location, dateRange, temperature, description, humidity, windSpeed } = body;
 
@@ -39,7 +39,7 @@ export async function PUT(request, { params }) {
     }
 
     const updated = await Weather.findByIdAndUpdate(
-      params.id,
+      id,
       {
         location,
         dateRange,
@@ -65,7 +65,8 @@ export async function PUT(request, { params }) {
 export async function DELETE(request, { params }) {
   try {
     await connectDB();
-    const deleted = await Weather.findByIdAndDelete(params.id);
+    const { id } = await params;
+    const deleted = await Weather.findByIdAndDelete(id);
 
     if (!deleted) {
       return NextResponse.json({ error: 'Record not found' }, { status: 404 });
